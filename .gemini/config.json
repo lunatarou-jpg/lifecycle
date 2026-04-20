@@ -1,0 +1,19 @@
+{
+  "projectName": "Weather-Wear",
+  "techStack": {
+    "framework": "React Native (Expo)",
+    "language": "TypeScript",
+    "structure": "Monorepo (Simple Directory)",
+    "logic": "Pure TypeScript Package",
+    "testing": "Vitest"
+  },
+  "conventions": {
+    "indentation": "2 spaces",
+    "naming": "PascalCase for Components, camelCase for logic",
+    "commitMessageLanguage": "Japanese"
+  },
+  "orchestration": {
+    "defaultAgent": "senior-engineer",
+    "activeAgent": "senior-engineer"
+  }
+}
