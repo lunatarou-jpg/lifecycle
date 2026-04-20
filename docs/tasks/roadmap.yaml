@@ -1,0 +1,74 @@
+project_name: Weather-Wear
+description: 通勤経路の気象条件を統合して服装・傘をアドバイスするパーソナルアシスタント
+
+# 現在の進捗状況
+status:
+  current_version: "0.1.0-prototype"
+  last_updated: "2026-04-20"
+
+# 完了したタスク
+completed_tasks:
+  - id: 1
+    title: "モノレポ基盤の構築"
+    detail: "apps/weather-app と packages/logic のディレクトリ構造を確立"
+  - id: 2
+    title: "高精度服装指数 (CI) 算出エンジンの実装"
+    detail: "ミスナールの風冷え補正、不快指数 (DI) ブーストを含むハイブリッドロジック"
+  - id: 3
+    title: "天気データ取得 (Open-Meteo) の実装"
+    detail: "降水確率、最高/最低気温、体感温度、風速、湿度の取得"
+  - id: 4
+    title: "ハイブリッド拠点判定ロジック"
+    detail: "所沢（自宅）と大崎（勤務先）の予報を統合し、安全第一でアドバイスを生成"
+  - id: 5
+    title: "基本UIの実装 (Expo/Web対応)"
+    detail: "統合アドバイスカード、拠点別の天気リスト、GPS現在地の表示"
+  - id: 6
+    title: "通知機能のプロトタイプ"
+    detail: "expo-notifications による朝の通知スケジューリングの土台"
+
+# 直近の TODO (次に着手すべきこと)
+todo_tasks:
+  - id: 101
+    title: "設定画面 (Settings) の作成"
+    priority: "high"
+    detail: "ユーザーが拠点（自宅、勤務先など）や通知時間を編集できるUI"
+  - id: 102
+    title: "データ永続化の実装"
+    priority: "high"
+    detail: "AsyncStorage を使用し、登録した拠点やスケジュールをスマホに保存する"
+  - id: 103
+    title: "曜日別スケジュール編集機能"
+    priority: "medium"
+    detail: "水曜・金曜は大崎、それ以外は所沢といったルールをUIから設定可能にする"
+  - id: 104
+    title: "お気に入り地点のリアルタイム・チェック"
+    priority: "medium"
+    detail: "スケジュール外の登録地点の天気を即座に確認できるボタンを追加"
+
+# 将来の構想 (バックログ)
+future_backlog:
+  - id: 201
+    title: "本格的な Web アプリ版の開発"
+    detail: "Next.js への移行、または Expo Web の最適化によるフル機能ウェブ版の提供"
+  - id: 202
+    title: "アカウント連携機能"
+    detail: "Firebase 等を用いたログイン機能。複数デバイス間でスケジュールを同期"
+  - id: 203
+    title: "服装アドバイスのカスタマイズ機能"
+    detail: "「私は暑がりだから薄着を多めにしてほしい」といったパーソナライズ設定"
+  - id: 204
+    title: "視覚的なリッチ化"
+    detail: "気象状況に合わせた背景色（雨なら青、晴れならオレンジ）やアニメーションアイコン"
+
+# ユーザー要件メモ
+user_requirements:
+  locations:
+    - name: "所沢" (自宅)
+    - name: "大崎" (勤務先)
+  schedule_pattern:
+    - days: [3, 5] # 水・金
+      path: ["所沢", "大崎", "所沢"]
+    - days: [0, 1, 2, 4, 6]
+      path: ["所沢"]
+  priority: "Safety First (安全第一)"
